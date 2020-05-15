@@ -21,7 +21,7 @@ GO
 CREATE SCHEMA HR AUTHORIZATION dbo;
 GO
 ```
-# Employees Table
+## Employees Table
 ```
 
 CREATE TABLE HR.Employees
@@ -32,7 +32,7 @@ CREATE TABLE HR.Employees
   CONSTRAINT PK_Employees PRIMARY KEY(empid)
   );
   ```
-  # Users Table
+  ## Users Table
 ```
 CREATE TABLE Users
 (
@@ -45,7 +45,9 @@ CREATE TABLE Users
   userphone     NVARCHAR(15)    NULL,
   CONSTRAINT PK_Users PRIMARY KEY (userid)
   );
-
+  ```
+  ## Inventory Table
+  ```
 CREATE TABLE Inventory
 (
   productid     INT             NOT NULL IDENTITY,
@@ -53,6 +55,9 @@ CREATE TABLE Inventory
   productqty    INT             NOT NULL,
   CONSTRAINT PK_Inventory PRIMARY KEY(productid),
 );
+```
+## Sales Table
+```
 CREATE TABLE Sales
 (
   orderid       INT             NOT NULL IDENTITY,
@@ -64,7 +69,9 @@ CREATE TABLE Sales
   CONSTRAINT FK_Sales_Inventory2 FOREIGN KEY(productid)
 	REFERENCES dbo.Inventory(productid),
 );
-
+```
+## Sellers Table 
+```
 CREATE TABLE Sellers
 (
   sellerid      INT             NOT NULL IDENTITY,
@@ -73,7 +80,9 @@ CREATE TABLE Sellers
   CONSTRAINT FK_Sellers_Users FOREIGN KEY(userid)
 	REFERENCES dbo.Users(userid)
 );
-
+```
+## Auctions Table
+```
 CREATE TABLE Auctions
 (
   auctionid     INT             NOT NULL IDENTITY, 
@@ -86,7 +95,9 @@ CREATE TABLE Auctions
   CONSTRAINT FK_Auctions_Inventory FOREIGN KEY(productid)
 	REFERENCES dbo.Inventory(productid)
 );
-
+```
+## Had to alter after creating due to error.
+```
 ALTER TABLE dbo.Inventory
 	ADD 
 		auctionid INT NULL,
@@ -99,11 +110,12 @@ ALTER TABLE dbo.Sales
         productqty    INT             NOT NULL,
 		CONSTRAINT FK_Sales_Auctions FOREIGN KEY(auctionid)
 			REFERENCES dbo.Auctions(auctionid);
-
+```
+## Various Inserts
+```
 INSERT INTO HR.Employees(fname, lname)
 VALUES(N'Kade', N'McCammon'), ('John', N'Smith'), (N'Joe', N'Johnson');
 
-SELECT * FROM HR.Employees;
 
 INSERT INTO Dbo.Users(fname, lname, email, password)
 VALUES(N'Jay', N'Johnson', N'jjohnson@hotmail.com', N'HelloWorld');
@@ -112,7 +124,6 @@ INSERT INTO Dbo.Users(fname, lname, email, password)
 VALUES(N'Bob', N'Kraft', N'bobbykraft@gmail.com', N'PatriotsOwner1'),
       (N'Jerry', N'Jones', N'billionairejerry@aol.com', N'CeeDeeLamb');
 
-SELECT * FROM Dbo.Users;
-
 INSERT INTO Dbo.Inventory(productname, productqty)
 VALUES(N'Madden 21', 3), (N'The Witcher 3 Wild Hunt', 1), (N'Call of Duty: Modern Warfare', 4), (N'Assassins Creed Oddysey', 2);
+```
