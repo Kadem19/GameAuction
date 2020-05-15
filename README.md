@@ -1,3 +1,3 @@
 # Game Auction Data Base
 ## Physical Database Design
-![Physical Database]()
+![Physical Database](PhysicalDataBaseDesign.PNG)
