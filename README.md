@@ -22,7 +22,7 @@ CREATE SCHEMA HR AUTHORIZATION dbo;
 GO
 ```
 ## Employees Table
-```
+```SQL
 
 CREATE TABLE HR.Employees
 (
@@ -33,7 +33,7 @@ CREATE TABLE HR.Employees
   );
   ```
   ## Users Table
-```
+```SQL
 CREATE TABLE Users
 (
   userid	    INT             NOT NULL IDENTITY,
@@ -47,7 +47,7 @@ CREATE TABLE Users
   );
   ```
   ## Inventory Table
-  ```
+  ```SQL
 CREATE TABLE Inventory
 (
   productid     INT             NOT NULL IDENTITY,
@@ -57,7 +57,7 @@ CREATE TABLE Inventory
 );
 ```
 ## Sales Table
-```
+```SQL
 CREATE TABLE Sales
 (
   orderid       INT             NOT NULL IDENTITY,
@@ -71,7 +71,7 @@ CREATE TABLE Sales
 );
 ```
 ## Sellers Table 
-```
+```SQL
 CREATE TABLE Sellers
 (
   sellerid      INT             NOT NULL IDENTITY,
@@ -82,7 +82,7 @@ CREATE TABLE Sellers
 );
 ```
 ## Auctions Table
-```
+```SQL
 CREATE TABLE Auctions
 (
   auctionid     INT             NOT NULL IDENTITY, 
@@ -97,7 +97,7 @@ CREATE TABLE Auctions
 );
 ```
 ## Had to alter after creating due to error.
-```
+```SQL
 ALTER TABLE dbo.Inventory
 	ADD 
 		auctionid INT NULL,
@@ -112,7 +112,7 @@ ALTER TABLE dbo.Sales
 			REFERENCES dbo.Auctions(auctionid);
 ```
 ## Various Inserts
-```
+```SQL
 INSERT INTO HR.Employees(fname, lname)
 VALUES(N'Kade', N'McCammon'), ('John', N'Smith'), (N'Joe', N'Johnson');
 
