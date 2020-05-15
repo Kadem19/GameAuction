@@ -2,7 +2,7 @@
 ## Physical Database Design
 ![Physical Database](PhysicalDataBaseDesign.PNG)
 
-## Database Implementation
+## Database Implementation (SQL Script)
 
 ```SQL
 USE master;
