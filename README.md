@@ -23,6 +23,7 @@ CREATE SCHEMA HR AUTHORIZATION dbo;
 GO
 ```
 ## Employees Table
+This table is for employees of the company.  I created it because down the road I would like to get the empid into the sales table just to see who verified the transaction.  However, right now it has no other table relations.  
 ```SQL
 
 CREATE TABLE HR.Employees
@@ -34,6 +35,7 @@ CREATE TABLE HR.Employees
   );
   ```
   ## Users Table
+  The users table is in my eyes the main table of the database.  Columns from the users table will be used in all of the other tables I have created.  It is how we identify who is doing what as far as buying and selling goes as well as all the pertinent info about our users.
 ```SQL
 CREATE TABLE Users
 (
@@ -48,6 +50,7 @@ CREATE TABLE Users
   );
   ```
   ## Inventory Table
+  The inventory table is used to identify what products we have and how many we have as well as product identification.  This table is linked to many other tables as well.  
   ```SQL
 CREATE TABLE Inventory
 (
@@ -58,6 +61,7 @@ CREATE TABLE Inventory
 );
 ```
 ## Sales Table
+The sales table is used to identify sales made with an order id, userid, and productid.  In the future I would like to implement the quantity of products as well as the ability to have multiple products in one order.
 ```SQL
 CREATE TABLE Sales
 (
@@ -72,6 +76,7 @@ CREATE TABLE Sales
 );
 ```
 ## Sellers Table 
+The sellers Table is mainly created for the auctions table just to identify the seller. The seller will be given a userid and if designated as a seller a seller id.  They do not have to be the same id.  
 ```SQL
 CREATE TABLE Sellers
 (
@@ -83,6 +88,7 @@ CREATE TABLE Sellers
 );
 ```
 ## Auctions Table
+The auctions table is where it all comes together.  This is basically what a seller has listed for sale.  I would like to add more to it in the future but there are some bugs I could not figure out how to get around.
 ```SQL
 CREATE TABLE Auctions
 (
@@ -98,6 +104,7 @@ CREATE TABLE Auctions
 );
 ```
 ## Had to alter after creating due to error.
+Since most of my tables have foreign keys I struggled creating them all it once.  Therefore I had to create a table without the foreign keys and then add the foreign keys after the table that contained those foreign keys was created. 
 ```SQL
 ALTER TABLE dbo.Inventory
 	ADD 
