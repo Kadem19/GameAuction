@@ -20,8 +20,9 @@ GO
 
 CREATE SCHEMA HR AUTHORIZATION dbo;
 GO
-
+```
 # Employees Table
+```
 
 CREATE TABLE HR.Employees
 (
@@ -30,7 +31,9 @@ CREATE TABLE HR.Employees
   lname         NVARCHAR(30)    NOT NULL,
   CONSTRAINT PK_Employees PRIMARY KEY(empid)
   );
-
+  ```
+  # Users Table
+```
 CREATE TABLE Users
 (
   userid	    INT             NOT NULL IDENTITY,
