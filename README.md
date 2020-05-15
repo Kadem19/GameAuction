@@ -1,5 +1,6 @@
 # Game Auction Data Base
 ## Physical Database Design
+This Database will hold all of the information that I need in order to create my application.  I have created six different tables and tested multiple inserts and select statements.  There is still some bugs to work out but it feels like a good start.
 ![Physical Database](PhysicalDataBaseDesign.PNG)
 
 ## Database Implementation (SQL Script)
