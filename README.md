@@ -21,6 +21,8 @@ GO
 CREATE SCHEMA HR AUTHORIZATION dbo;
 GO
 
+# Employees Table
+
 CREATE TABLE HR.Employees
 (
   empid			INT				NOT NULL IDENTITY,
